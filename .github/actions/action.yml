@@ -1,1 +1,18 @@
+name: Docker
 
+on: [workflow_call]
+
+inputs:
+  who-to-greet:
+    description: 'Who to greet'
+    required: true
+    default: 'World'
+ouputs:
+  time:
+    description: 'The time we greeted you'
+    
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
