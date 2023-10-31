@@ -2,7 +2,8 @@ name: Reusable workflow
 on: 
   workflow_call:
     outputs:
-      current-time: ${{jobs.reusable_job.outputs.current-time}}
+      current-time: 
+        value: ${{jobs.reusable_job.outputs.current-time}}
     inputs:
       who-to-greet:
         required: true
